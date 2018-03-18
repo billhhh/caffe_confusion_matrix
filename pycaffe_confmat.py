@@ -1,3 +1,7 @@
+#
+#Author: Bill Wang
+#
+
 import sys
 import caffe
 import matplotlib
@@ -18,7 +22,7 @@ import logging
 IMAGE_FILE = './orange-web-1024x768.jpg'
 
 test_root = 'D:/dataset/newFood_724_clean/images'
-test_txt = './newFood724_test.txt'
+test_txt = 'newFood724_test.txt'
 label_txt = 'food_id.txt'
 
 test_files = []
@@ -103,9 +107,8 @@ if __name__ == "__main__":
         image_dims=(256,256)
     )
 
-
-    caffe.set_mode_gpu()
-    #caffe.set_mode_cpu()
+    #caffe.set_mode_gpu()
+    caffe.set_mode_cpu()
     lmdb_env = lmdb.open(args.lmdb)
     lmdb_txn = lmdb_env.begin()
     lmdb_cursor = lmdb_txn.cursor()
