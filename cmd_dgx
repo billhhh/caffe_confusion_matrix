@@ -1,0 +1,1 @@
+python pycaffe_confmat.py --proto model/ResNet-50-deploy.prototxt --model model/model_93000.caffemodel --lmdb ../newFood724_TEST/newFood724_test_lmdb --mean model/newFood724_aug_mean.binaryproto
