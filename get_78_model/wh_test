@@ -1,0 +1,17 @@
+##!/usr/bin/env sh
+#!/bin/bash
+#By Bill
+
+NET=resnet50_newFood724_test
+TOOLS=../../bcaffe/caffe-master/build/tools/caffe
+WEIGHTS=./test_model/11_12_b64_3_step1[lr=0.000008]_resnet50_newFood724_b64_iter_115000.caffemodel
+MODEL=./resnet50_newFood724_test.prototxt
+
+LOG=logs/${NET}_`date +'%Y-%m-%d_%H-%M-%S'`.log
+exec &> >(tee -a "$LOG")
+echo Logging output to "$LOG"
+
+$TOOLS test -gpu=0 \
+	-model=${MODEL} \
+	-weights=$WEIGHTS \
+	-iterations 2000

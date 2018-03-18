@@ -1,0 +1,4 @@
+py_caffe_val.py --proto examples/food_tst/trained_model/deploy.prototxt --model examples/food_tst/trained_model/googlenet_zh_food724_iter_100000.caffemodel --lmdb examples/food_tst/food724_aug_nr_test1_lmdb --mean examples/food_tst/food724_aug_nr_mean.binaryproto
+
+
+scp /mnt/StorageArray2_DGX1/zh/codes/zh_wkplace/caffe/logs/imagenet_zh_googlenet.txt zhaoh@dl.sis.smu.edu.sg:/home/zhaoh/DGX_logs
