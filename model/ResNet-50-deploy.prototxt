@@ -1,4 +1,5 @@
 name: "ResNet-50"
+
 input: "data"
 input_dim: 1
 input_dim: 3
@@ -2303,8 +2304,8 @@ layer {
 
 layer {
 	bottom: "pool5"
-	top: "fc724"
-	name: "fc724"
+	top: "wh_fc_724"
+	name: "wh_fc_724"
 	type: "InnerProduct"
 	inner_product_param {
 		num_output: 724
@@ -2312,7 +2313,7 @@ layer {
 }
 
 layer {
-	bottom: "fc724"
+	bottom: "wh_fc_724"
 	top: "prob"
 	name: "prob"
 	type: "Softmax"
